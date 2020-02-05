@@ -1,4 +1,4 @@
-# selection_picker_example
+# Selection Picker
 
 Demonstrates how to use the selection_picker plugin.
 
