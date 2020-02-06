@@ -1,8 +1,10 @@
 # selection_picker
 
-A new flutter plugin project
+A flutter plugin for creating a Picker selection and customize it.
 
-## Getting Started
+![Example](https://gitlab01.copyleft.no/pixzelle/selection_picker/raw/master/device-2020-02-05-173529.png)
+
+## How to use
 
 This project is a starting point for a Flutter
 [plug-in package](https://flutter.dev/developing-packages/),
