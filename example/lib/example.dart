@@ -23,15 +23,12 @@ class ExamplePage extends StatelessWidget{
             items: Utilities.getDays(),
             showSelectAll: true,
             textColor: Color(0xFF003A5D),
-            selectAllTitle: Text("Select all",
-                style: _styleTitleSelectAll),
+            selectAllTitle: Text("Select all",style: _styleTitleSelectAll),
             showTitle: true,
             title: Text("Week days",style: _styleTitle,),
             backgroundColorSelected: Colors.black12,
             onSelected: (items){
-              items.forEach((f){
-                print(f.identifier);
-              });
+            //Items selected here 
             },
             aligment: Alignment.center,
           ),

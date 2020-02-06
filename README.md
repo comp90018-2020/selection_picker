@@ -2,15 +2,37 @@
 
 A flutter plugin for creating a Picker selection and customize it.
 
-![Example](https://gitlab01.copyleft.no/pixzelle/selection_picker/raw/master/device-2020-02-05-173529.png)
+![Example](https://gitlab01.copyleft.no/pixzelle/selection_picker/raw/master/example.png)
 
 ## How to use
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+```
+    SelectionPicker(
+            items: Utilities.getDays(),
+            showSelectAll: true,
+            textColor: Color(0xFF003A5D),
+            selectAllTitle: Text("Select all",style: _styleTitleSelectAll),
+            showTitle: true,
+            title: Text("Week days",style: _styleTitle,),
+            backgroundColorSelected: Colors.black12,
+            onSelected: (items){
+            //Items selected here 
+            },
+            aligment: Alignment.center,
+          )
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+class Utilities {
+  static List<SelectionItem> getDays() {
+    List<SelectionItem> days = [];
+    days.add(SelectionItem(name: "MO", isSelected: false, identifier: 1));
+    days.add(SelectionItem(name: "TU", isSelected: false, identifier: 2));
+    days.add(SelectionItem(name: "WE", isSelected: false, identifier: 3));
+    days.add(SelectionItem(name: "TH", isSelected: false, identifier: 4));
+    days.add(SelectionItem(name: "FR", isSelected: false, identifier: 5));
+    days.add(SelectionItem(name: "SA", isSelected: false, identifier: 6));
+    days.add(SelectionItem(name: "SU", isSelected: false, identifier: 7));
+    return days;
+  }
+}
+
+```
