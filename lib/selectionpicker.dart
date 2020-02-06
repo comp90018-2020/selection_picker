@@ -16,15 +16,15 @@ class SelectionPicker extends StatefulWidget {
 
   SelectionPicker(
       {@required final this.items,
-        this.showTitle,
-        this.showSelectAll,
-        this.selectAllTitle,
-        this.title,
-        this.backgroundColorSelected,
-        this.backgroundColorNoSelected,
-        this.textColor,
-        this.aligment,
-        @required this.onSelected});
+      this.showTitle,
+      this.showSelectAll,
+      this.selectAllTitle,
+      this.title,
+      this.backgroundColorSelected,
+      this.backgroundColorNoSelected,
+      this.textColor,
+      this.aligment,
+      @required this.onSelected});
 
   @override
   SelectionPickerState createState() => SelectionPickerState();
@@ -38,29 +38,29 @@ class SelectionPickerState extends State<SelectionPicker> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: Container(
-            margin: EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _showTitle(widget.showTitle),
-                Container(
-                    alignment: widget.aligment,
-                    child: Wrap(
-                      children: _createItems(),
-                    )),
-                _showSelectedAllWidget(widget.showSelectAll),
-              ],
-            ),
-          ),
-        ));
+      child: Container(
+        margin: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            _showTitle(widget.showTitle),
+            Container(
+                alignment: widget.aligment,
+                child: Wrap(
+                  children: _createItems(),
+                )),
+            _showSelectedAllWidget(widget.showSelectAll),
+          ],
+        ),
+      ),
+    ));
   }
 
   Widget _showTitle(bool select) {
     if (select && widget.title != null) {
       return Container(
           margin:
-          EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 12.0),
+              EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 12.0),
           alignment: Alignment.centerLeft,
           child: widget.title);
     } else {
@@ -103,8 +103,7 @@ class SelectionPickerState extends State<SelectionPicker> {
   }
 
   Widget _setName(String name) {
-    var colorItem =
-    widget.textColor != null ? widget.textColor : Colors.black;
+    var colorItem = widget.textColor != null ? widget.textColor : Colors.black;
 
     if (name.length >= 2) {
       return Text(

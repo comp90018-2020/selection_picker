@@ -1,6 +1,6 @@
 name: selection_picker
 description: A flutter plugin for creating a Picker selection and customize it.
-version: 0.0.3
+version: 0.1.0
 author: Diego Ramírez<diego.ramirez@pixzelle.mx>
 homepage: https://pixzelle.mx/
 repository: https://gitlab01.copyleft.no/pixzelle/selection_picker.git
