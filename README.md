@@ -1,6 +1,6 @@
 # selection_picker
 
-A new flutter plugin project.
+A new flutter plugin project
 
 ## Getting Started
 
