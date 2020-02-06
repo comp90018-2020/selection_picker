@@ -3,21 +3,21 @@ import 'package:selection_picker/selection_item.dart';
 import 'package:flutter/material.dart';
 
 class SelectionPicker extends StatefulWidget {
-  List<SelectionItem> items;
-  Function(List<SelectionItem>) onSelected;
-  bool showTitle;
-  bool showSelectAll;
-  Text selectAllTitle;
-  Text title;
-  Color backgroundColorSelected;
-  Color backgroundColorNoSelected;
-  Color textColor;
-  Alignment aligment = Alignment.center;
+  final List<SelectionItem> items;
+  final Function(List<SelectionItem>) onSelected;
+  final bool showTitle;
+  final bool showSelectAll;
+  final Text selectAllTitle;
+  final Text title;
+  final Color backgroundColorSelected;
+  final Color backgroundColorNoSelected;
+  final Color textColor;
+  final Alignment aligment;
 
   SelectionPicker(
-      {@required this.items,
-        this.showTitle = true,
-        this.showSelectAll = true,
+      {@required final this.items,
+        this.showTitle,
+        this.showSelectAll,
         this.selectAllTitle,
         this.title,
         this.backgroundColorSelected,

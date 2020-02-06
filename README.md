@@ -6,7 +6,7 @@ A flutter plugin for creating a Picker selection and customize it.
 
 ## How to use
 
-```
+```dart
     SelectionPicker(
             items: Utilities.getDays(),
             showSelectAll: true,
