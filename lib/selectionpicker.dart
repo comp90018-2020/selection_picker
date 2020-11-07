@@ -36,36 +36,12 @@ class SelectionPickerState extends State<SelectionPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-      child: Container(
-        margin: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            _showTitle(widget.showTitle),
-            Container(
-                alignment: widget.aligment,
-                child: Wrap(
-                  children: _createItems(),
-                )),
-            _showSelectedAllWidget(widget.showSelectAll),
-          ],
-        ),
+    return Container(
+      alignment: widget.aligment,
+      child: Wrap(
+        children: _createItems(),
       ),
-    ));
-  }
-
-  Widget _showTitle(bool select) {
-    if (select && widget.title != null) {
-      return Container(
-          margin:
-              EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 12.0),
-          alignment: Alignment.centerLeft,
-          child: widget.title);
-    } else {
-      return Container();
-    }
+    );
   }
 
   List<Widget> _createItems() {
@@ -123,34 +99,6 @@ class SelectionPickerState extends State<SelectionPicker> {
   _addToSelectedDays(SelectionItem day) => selectedDays.add(day);
 
   _removeFromSelectedDays(SelectionItem day) => selectedDays.remove(day);
-
-  Widget _showSelectedAllWidget(bool select) =>
-      select ? _createSelectAllDays() : Container();
-
-  Widget _createSelectAllDays() {
-    return SwitchListTile(
-        value: isChecked,
-        title: widget.selectAllTitle != null
-            ? widget.selectAllTitle
-            : Text("Set switch title here"),
-        activeColor: Color(0xFF003A5D),
-        onChanged: (checked) {
-          setState(() {
-            isChecked = checked;
-            _selectAllDays(isChecked);
-          });
-        });
-  }
-
-  _selectAllDays(bool select) {
-    selectedDays.clear();
-    widget.items.forEach((item) {
-      item.isSelected = select;
-      if (select) selectedDays.add(item);
-    });
-
-    widget.onSelected(selectedDays);
-  }
 
   _updateSwitch() {
     isChecked = selectedDays.length == widget.items.length ? true : false;
